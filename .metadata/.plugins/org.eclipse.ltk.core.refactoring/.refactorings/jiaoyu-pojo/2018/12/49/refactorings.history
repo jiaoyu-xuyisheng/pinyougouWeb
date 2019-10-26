@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;jiaoyu-pojo&apos;&#x0D;&#x0A;- Original project: &apos;jiaoyu-pojo&apos;&#x0D;&#x0A;- Original element: &apos;jiaoyu-pojo/src/main/java/com.jiaoyu.pojo&apos;" description="Delete element" element1="/src\/main\/java&lt;com.jiaoyu.pojo" element2="/src\/main\/java&lt;com.jiaoyu" element3="/src\/main\/java&lt;com" elements="3" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1544207079298" subPackages="false" version="1.0"/>
+</session>

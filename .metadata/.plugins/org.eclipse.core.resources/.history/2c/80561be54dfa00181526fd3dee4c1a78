@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jiaoyu.mapper.JyuserMapper" >
+  <resultMap id="BaseResultMap" type="com.jiaoyu.pojo.Jyuser" >
+    <id column="jy_userid" property="jyUserid" jdbcType="INTEGER" />
+    <result column="jy_username" property="jyUsername" jdbcType="VARCHAR" />
+    <result column="jy_password" property="jyPassword" jdbcType="VARCHAR" />
+    <result column="jy_phone" property="jyPhone" jdbcType="VARCHAR" />
+    <result column="jy_score" property="jyScore" jdbcType="INTEGER" />
+    <result column="jy_headpic" property="jyHeadpic" jdbcType="VARCHAR" />
+    <result column="jy_createdate" property="jyCreatedate" jdbcType="TIMESTAMP" />
+    <result column="jy_update" property="jyUpdate" jdbcType="TIMESTAMP" />
+    <result column="jy_answer1" property="jyAnswer1" jdbcType="VARCHAR" />
+    <result column="jy_answer2" property="jyAnswer2" jdbcType="VARCHAR" />
+    <result column="jy_answer3" property="jyAnswer3" jdbcType="VARCHAR" />
+    <result column="jy_ask1" property="jyAsk1" jdbcType="VARCHAR" />
+    <result column="jy_ask2" property="jyAsk2" jdbcType="VARCHAR" />
+    <result column="jy_ask3" property="jyAsk3" jdbcType="VARCHAR" />
+    <result column="jy_emall" property="jyEmall" jdbcType="VARCHAR" />
+    <result column="jy_level" property="jyLevel" jdbcType="INTEGER" />
+    <result column="role" property="role" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    jy_userid, jy_username, jy_password, jy_phone, jy_score, jy_headpic, jy_createdate, 
+    jy_update, jy_answer1, jy_answer2, jy_answer3, jy_ask1, jy_ask2, jy_ask3, jy_emall, 
+    jy_level, role
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.jiaoyu.pojo.JyuserExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from jyuser
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from jyuser
+    where jy_userid = #{jyUserid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from jyuser
+    where jy_userid = #{jyUserid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.jiaoyu.pojo.JyuserExample" >
+    delete from jyuser
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.jiaoyu.pojo.Jyuser" >
+    insert into jyuser (jy_userid, jy_username, jy_password, 
+      jy_phone, jy_score, jy_headpic, 
+      jy_createdate, jy_update, jy_answer1, 
+      jy_answer2, jy_answer3, jy_ask1, 
+      jy_ask2, jy_ask3, jy_emall, 
+      jy_level, role)
+    values (#{jyUserid,jdbcType=INTEGER}, #{jyUsername,jdbcType=VARCHAR}, #{jyPassword,jdbcType=VARCHAR}, 
+      #{jyPhone,jdbcType=VARCHAR}, #{jyScore,jdbcType=INTEGER}, #{jyHeadpic,jdbcType=VARCHAR}, 
+      #{jyCreatedate,jdbcType=TIMESTAMP}, #{jyUpdate,jdbcType=TIMESTAMP}, #{jyAnswer1,jdbcType=VARCHAR}, 
+      #{jyAnswer2,jdbcType=VARCHAR}, #{jyAnswer3,jdbcType=VARCHAR}, #{jyAsk1,jdbcType=VARCHAR}, 
+      #{jyAsk2,jdbcType=VARCHAR}, #{jyAsk3,jdbcType=VARCHAR}, #{jyEmall,jdbcType=VARCHAR}, 
+      #{jyLevel,jdbcType=INTEGER}, #{role,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jiaoyu.pojo.Jyuser" >
+    insert into jyuser
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="jyUserid != null" >
+        jy_userid,
+      </if>
+      <if test="jyUsername != null" >
+        jy_username,
+      </if>
+      <if test="jyPassword != null" >
+        jy_password,
+      </if>
+      <if test="jyPhone != null" >
+        jy_phone,
+      </if>
+      <if test="jyScore != null" >
+        jy_score,
+      </if>
+      <if test="jyHeadpic != null" >
+        jy_headpic,
+      </if>
+      <if test="jyCreatedate != null" >
+        jy_createdate,
+      </if>
+      <if test="jyUpdate != null" >
+        jy_update,
+      </if>
+      <if test="jyAnswer1 != null" >
+        jy_answer1,
+      </if>
+      <if test="jyAnswer2 != null" >
+        jy_answer2,
+      </if>
+      <if test="jyAnswer3 != null" >
+        jy_answer3,
+      </if>
+      <if test="jyAsk1 != null" >
+        jy_ask1,
+      </if>
+      <if test="jyAsk2 != null" >
+        jy_ask2,
+      </if>
+      <if test="jyAsk3 != null" >
+        jy_ask3,
+      </if>
+      <if test="jyEmall != null" >
+        jy_emall,
+      </if>
+      <if test="jyLevel != null" >
+        jy_level,
+      </if>
+      <if test="role != null" >
+        role,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="jyUserid != null" >
+        #{jyUserid,jdbcType=INTEGER},
+      </if>
+      <if test="jyUsername != null" >
+        #{jyUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="jyPassword != null" >
+        #{jyPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="jyPhone != null" >
+        #{jyPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="jyScore != null" >
+        #{jyScore,jdbcType=INTEGER},
+      </if>
+      <if test="jyHeadpic != null" >
+        #{jyHeadpic,jdbcType=VARCHAR},
+      </if>
+      <if test="jyCreatedate != null" >
+        #{jyCreatedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="jyUpdate != null" >
+        #{jyUpdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="jyAnswer1 != null" >
+        #{jyAnswer1,jdbcType=VARCHAR},
+      </if>
+      <if test="jyAnswer2 != null" >
+        #{jyAnswer2,jdbcType=VARCHAR},
+      </if>
+      <if test="jyAnswer3 != null" >
+        #{jyAnswer3,jdbcType=VARCHAR},
+      </if>
+      <if test="jyAsk1 != null" >
+        #{jyAsk1,jdbcType=VARCHAR},
+      </if>
+      <if test="jyAsk2 != null" >
+        #{jyAsk2,jdbcType=VARCHAR},
+      </if>
+      <if test="jyAsk3 != null" >
+        #{jyAsk3,jdbcType=VARCHAR},
+      </if>
+      <if test="jyEmall != null" >
+        #{jyEmall,jdbcType=VARCHAR},
+      </if>
+      <if test="jyLevel != null" >
+        #{jyLevel,jdbcType=INTEGER},
+      </if>
+      <if test="role != null" >
+        #{role,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.jiaoyu.pojo.JyuserExample" resultType="java.lang.Integer" >
+    select count(*) from jyuser
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update jyuser
+    <set >
+      <if test="record.jyUserid != null" >
+        jy_userid = #{record.jyUserid,jdbcType=INTEGER},
+      </if>
+      <if test="record.jyUsername != null" >
+        jy_username = #{record.jyUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="record.jyPassword != null" >
+        jy_password = #{record.jyPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="record.jyPhone != null" >
+        jy_phone = #{record.jyPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.jyScore != null" >
+        jy_score = #{record.jyScore,jdbcType=INTEGER},
+      </if>
+      <if test="record.jyHeadpic != null" >
+        jy_headpic = #{record.jyHeadpic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.jyCreatedate != null" >
+        jy_createdate = #{record.jyCreatedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.jyUpdate != null" >
+        jy_update = #{record.jyUpdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.jyAnswer1 != null" >
+        jy_answer1 = #{record.jyAnswer1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.jyAnswer2 != null" >
+        jy_answer2 = #{record.jyAnswer2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.jyAnswer3 != null" >
+        jy_answer3 = #{record.jyAnswer3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.jyAsk1 != null" >
+        jy_ask1 = #{record.jyAsk1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.jyAsk2 != null" >
+        jy_ask2 = #{record.jyAsk2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.jyAsk3 != null" >
+        jy_ask3 = #{record.jyAsk3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.jyEmall != null" >
+        jy_emall = #{record.jyEmall,jdbcType=VARCHAR},
+      </if>
+      <if test="record.jyLevel != null" >
+        jy_level = #{record.jyLevel,jdbcType=INTEGER},
+      </if>
+      <if test="record.role != null" >
+        role = #{record.role,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update jyuser
+    set jy_userid = #{record.jyUserid,jdbcType=INTEGER},
+      jy_username = #{record.jyUsername,jdbcType=VARCHAR},
+      jy_password = #{record.jyPassword,jdbcType=VARCHAR},
+      jy_phone = #{record.jyPhone,jdbcType=VARCHAR},
+      jy_score = #{record.jyScore,jdbcType=INTEGER},
+      jy_headpic = #{record.jyHeadpic,jdbcType=VARCHAR},
+      jy_createdate = #{record.jyCreatedate,jdbcType=TIMESTAMP},
+      jy_update = #{record.jyUpdate,jdbcType=TIMESTAMP},
+      jy_answer1 = #{record.jyAnswer1,jdbcType=VARCHAR},
+      jy_answer2 = #{record.jyAnswer2,jdbcType=VARCHAR},
+      jy_answer3 = #{record.jyAnswer3,jdbcType=VARCHAR},
+      jy_ask1 = #{record.jyAsk1,jdbcType=VARCHAR},
+      jy_ask2 = #{record.jyAsk2,jdbcType=VARCHAR},
+      jy_ask3 = #{record.jyAsk3,jdbcType=VARCHAR},
+      jy_emall = #{record.jyEmall,jdbcType=VARCHAR},
+      jy_level = #{record.jyLevel,jdbcType=INTEGER},
+      role = #{record.role,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jiaoyu.pojo.Jyuser" >
+    update jyuser
+    <set >
+      <if test="jyUsername != null" >
+        jy_username = #{jyUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="jyPassword != null" >
+        jy_password = #{jyPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="jyPhone != null" >
+        jy_phone = #{jyPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="jyScore != null" >
+        jy_score = #{jyScore,jdbcType=INTEGER},
+      </if>
+      <if test="jyHeadpic != null" >
+        jy_headpic = #{jyHeadpic,jdbcType=VARCHAR},
+      </if>
+      <if test="jyCreatedate != null" >
+        jy_createdate = #{jyCreatedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="jyUpdate != null" >
+        jy_update = #{jyUpdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="jyAnswer1 != null" >
+        jy_answer1 = #{jyAnswer1,jdbcType=VARCHAR},
+      </if>
+      <if test="jyAnswer2 != null" >
+        jy_answer2 = #{jyAnswer2,jdbcType=VARCHAR},
+      </if>
+      <if test="jyAnswer3 != null" >
+        jy_answer3 = #{jyAnswer3,jdbcType=VARCHAR},
+      </if>
+      <if test="jyAsk1 != null" >
+        jy_ask1 = #{jyAsk1,jdbcType=VARCHAR},
+      </if>
+      <if test="jyAsk2 != null" >
+        jy_ask2 = #{jyAsk2,jdbcType=VARCHAR},
+      </if>
+      <if test="jyAsk3 != null" >
+        jy_ask3 = #{jyAsk3,jdbcType=VARCHAR},
+      </if>
+      <if test="jyEmall != null" >
+        jy_emall = #{jyEmall,jdbcType=VARCHAR},
+      </if>
+      <if test="jyLevel != null" >
+        jy_level = #{jyLevel,jdbcType=INTEGER},
+      </if>
+      <if test="role != null" >
+        role = #{role,jdbcType=INTEGER},
+      </if>
+    </set>
+    where jy_userid = #{jyUserid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jiaoyu.pojo.Jyuser" >
+    update jyuser
+    set jy_username = #{jyUsername,jdbcType=VARCHAR},
+      jy_password = #{jyPassword,jdbcType=VARCHAR},
+      jy_phone = #{jyPhone,jdbcType=VARCHAR},
+      jy_score = #{jyScore,jdbcType=INTEGER},
+      jy_headpic = #{jyHeadpic,jdbcType=VARCHAR},
+      jy_createdate = #{jyCreatedate,jdbcType=TIMESTAMP},
+      jy_update = #{jyUpdate,jdbcType=TIMESTAMP},
+      jy_answer1 = #{jyAnswer1,jdbcType=VARCHAR},
+      jy_answer2 = #{jyAnswer2,jdbcType=VARCHAR},
+      jy_answer3 = #{jyAnswer3,jdbcType=VARCHAR},
+      jy_ask1 = #{jyAsk1,jdbcType=VARCHAR},
+      jy_ask2 = #{jyAsk2,jdbcType=VARCHAR},
+      jy_ask3 = #{jyAsk3,jdbcType=VARCHAR},
+      jy_emall = #{jyEmall,jdbcType=VARCHAR},
+      jy_level = #{jyLevel,jdbcType=INTEGER},
+      role = #{role,jdbcType=INTEGER}
+    where jy_userid = #{jyUserid,jdbcType=INTEGER}
+  </update>
+</mapper>

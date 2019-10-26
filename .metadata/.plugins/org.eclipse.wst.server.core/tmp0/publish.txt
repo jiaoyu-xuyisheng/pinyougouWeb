@@ -1,0 +1,8 @@
+#Tomcat publish data
+#Mon Sep 23 09:56:01 CST 2019
+org.eclipse.jst.jee.server\:/binary\:D\:\\BaiduNetdiskDownload\\repository\\org\\springframework\\spring-web\\4.2.4.RELEASE\\spring-web-4.2.4.RELEASE.jar=D\:\\AAA\\apache-tomcat-8.5.24\\webapps\\jiaoyu-teacher-web\\WEB-INF\\lib\\spring-web-4.2.4.RELEASE.jar
+org.eclipse.jst.jee.server\:jiaoyu-teacher-web=D\:\\AAA\\apache-tomcat-8.5.24\\webapps\\jiaoyu-teacher-web
+org.eclipse.jst.j2ee.server\:jiaoyu-dao=D\:\\AAA\\apache-tomcat-8.5.24\\webapps\\jiaoyu-teacher-web\\WEB-INF\\lib\\jiaoyu-dao-0.0.1-SNAPSHOT.jar
+org.eclipse.jst.j2ee.server\:jiaoyu-common=D\:\\AAA\\apache-tomcat-8.5.24\\webapps\\jiaoyu-teacher-web\\WEB-INF\\lib\\jiaoyu-common-0.0.1-SNAPSHOT.jar
+org.eclipse.jst.j2ee.server\:jiaoyu-teacher-interface=D\:\\AAA\\apache-tomcat-8.5.24\\webapps\\jiaoyu-teacher-web\\WEB-INF\\lib\\jiaoyu-teacher-interface-0.0.1-SNAPSHOT.jar
+org.eclipse.jst.j2ee.server\:jiaoyu-pojo=D\:\\AAA\\apache-tomcat-8.5.24\\webapps\\jiaoyu-teacher-web\\WEB-INF\\lib\\jiaoyu-pojo-0.0.1-SNAPSHOT.jar

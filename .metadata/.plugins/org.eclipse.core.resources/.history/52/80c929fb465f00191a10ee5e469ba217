@@ -1,0 +1,174 @@
+<!doctype html>
+
+<html  lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keywords" content="521教育,远程教育,公开课,网络公开课,在线学习,在线教育,在线培训,在线课堂,名师讲堂,视频课程">
+<meta name="description" itemprop="description" content="521教育推出的专业在线教育平台，聚合大量优质教育机构和名师，打造老师在线上课教学、学生及时互动学习的课堂。521教育，学习成就梦想！">
+<title>521教育网专业在线教育平台</title>
+<link rel="icon" href="img/favicon.ico">
+<link rel="stylesheet" href="layui/css/layui.css"  media="all">
+<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="layui/layui.all.js"></script>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/item_list.css">   
+    
+    <script type="text/javascript" src="plugins/angularjs/angular.min.js">  </script>       
+    <script type="text/javascript" src="js/mybase.js">  </script>
+<script type="text/javascript" src="js/item_list.js">  </script>
+</head>
+<body   ng-app="myjiaoyu" ng-controller="myindexController" ng-init="findKeMap(keid);findFriendlyLink();">
+<!--头部-->
+<div  style="width:100%;padding:0px;magin:0px;height:80px">
+   <iframe src="index_header.html" width="100%" frameborder="0"></iframe>
+</div>
+
+
+
+<div  class="layui-container" style="width:100%;">
+<div class="layui-row" style="height:25px;font-size:25px;">
+
+    <span>
+      <a href="">首页</a>&gt;
+      <a href="">演示</a>&gt;
+      <a><cite>导航元素</cite></a>
+    </span>
+</div>
+</div>
+
+
+<div class="layui-container" style="width:100%;margin-top:30px;">
+
+    <div class="layui-row">
+        <div class="layui-col-xs12" style="border: outset;border-width:20px;border-color: #2E2D3C">
+            <video id="myvideo" src="{{kemap.keurl}}" autoplay="autoplay" class="layui-col-xs12"  controls="controls">
+            </video>
+        </div>
+        <div class="layui-col-xs12" style="height:100px;background:#2E2D3C;">
+            <h3 style="color:#F8F8F8;magin-left:30px;padding-left:30px;padding-top:30px;">{{kemap.ketitle}}
+                <span style="color:red;font-size:20px;font-weight:bolder;padding-left:30px;">{{kemap.charge}}</span></h3>
+
+            <p style="padding-top:10px;color:#FFB800;padding-left:20px;"><span style="padding-left:20px;">播放量</span>&nbsp;&nbsp;&nbsp;<span>{{kemap.view}}</span></p>
+        </div>
+        <div class="layui-col-xs12" style="height:200px;margin-top:30px;border:20px ridge #2E2D3C;overflow-y:hidden;overflow-y:scroll" >
+            <ul id="ulvideobox">
+                <li class="video_list_box" ng-repeat="entity in kemap.keList"><a href="">
+                    <p class="myp" mystyle="{{entity.listUrl1}}">{{entity.listTitle}}</p>
+                </a></li>                
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div  style="width:100%;margin-top:20px;">
+
+    <div class="layui-tab layui-tab-card">
+        <ul class="layui-tab-title">
+            <li class="layui-this tab_title_video" >课程详情</li>
+            <li class="tab_title_video">学生问答;</li>
+            <li class="tab_title_video">课程评价;</li>
+        </ul>
+        <div class="layui-tab-content" style="height: 1200px;">
+            <div class="layui-tab-item layui-show">{{kemap.detail}}</div>
+
+            <div class="layui-tab-item" >
+
+                <div class="layui-row">
+                    <div class="layui-col-xs12" style="height:800px;position:relative; ">
+
+                        <a ng-repeat="entity in map.askResult"  href="{{entity.askurl}}{{entity.askid}}"
+                        class="layui-col-xs-offset1 layui-col-xs10" style="height:100px;margin-top:20px;border-bottom:2px solid #aaaa;">
+                            <div class="ask_small_box">
+                                <div class="answer_count">{{entity.answercount}}</div>
+                                <div class="answer_state">{{entity.status==1?'已回答':'未回答'}}</div>
+                            </div>
+                            <div class="view_count_box">
+                                <div class="view_count">{{entity.view}}</div>
+                                <div class="view_state">浏览数量</div>
+                            </div>
+                            <div class="ask_contant_box">
+                                <div class="ask_contant_line1">{{entity.askTitle}}</div>
+                                <div class="ask_contant_line2"><span class="ask_id">{{entity.askid}}</span>
+                                    <span class="ask_name">{{entity.username}}</span>
+                                    <span class="ask_date">{{entity.askDatetime}}</span></div>
+                            </div>
+                        </a>
+
+                        <div id="test1" style="position:absolute;bottom:2%;left:20%;"></div>
+                    </div>
+                </div>
+	  
+ 
+	 	
+				 <div class="layui-col-xs7">
+				  	<input type="text" id="asktitle" placeholder="请输入你问题的题目"  class="layui-input"> 
+			        <textarea class="layui-textarea layui-hide" id="content">
+			        	请输入你问题的内容！！
+			        </textarea> 			 
+			      <button class="layui-btn" id="askbtn">立即提交</button>			
+			 	</div>     
+           </div>
+
+            <div class="layui-tab-item">
+
+                    <div class="layui-row" style="position:relative;height:800px;">
+                            <div ng-repeat="entity in commap" class="layui-col-xs-offset1 layui-col-xs10" style="height:100px;margin-top:20px;border-bottom:2px solid #aaaa;overflow-x:hidden;">
+                                <div class="evaluate_small_box_left">
+                                    <img style="width:50px;height:50px;border-radius:100%;" src="{{entity.userimgurl}}" alt="用户头像">
+                                    <div>{{entity.username}}</div>
+                                </div>
+
+                                <div class="evaluate_small_box_right">
+                                    <div  style="color:red;font-weight:bolder;font-size:25px;">{{entity.start}}</div>
+                                    <p  ng-bind-html="entity.comcontent|trust2Html"></p>
+                                    <p><span style="color:#8D8D8D">{{entity.commentdate}}</span></p>
+                                </div>
+                            </div>                 
+
+                        <div id="mypagehelp" style="position:absolute;bottom:20px;left:20%;"></div>
+                    </div><!---layui_row_end-->
+
+			
+                <select id="pjselect"  style="width:50%;height:40px;border-color:#c9c9c9">
+                    <option value="0">很好</option>
+                    <option value="1" selected="">好</option>
+                    <option value="2">一般</option>
+                    <option value="3">差</option>
+                    <option value="4">很查</option>
+                </select><span style="width:200px;height:40px;line-height:40px;color:#8D8D8D;">请选择的印象！！</span>
+                <textarea class="layui-textarea layui-hide" id="LAY_demo2">
+                             	 请输入你要评价的内容！！
+                </textarea>
+               <div class="site-demo-button" style="margin-top: 20px;">
+                        <button class="layui-btn" id="pinjiabtn">提   交</button>
+                </div>
+			
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="dark" style="width:100%;height:400px;position:relative">
+
+    <div style="position:absolute;width:90%;height:3px;background:#0F0F0F;left:5%;top:55%;"></div>
+
+    <div style="position:absolute;top:30px;width:80%;height:40%;left:10%;" >
+        <div style="margin-left:50px;float:left;margin-bottom:30px;" ng-repeat="en in friendlylist">
+        <span class="footspan"><a href="{{en.furl}}">{{en.fname}}</a></span>
+        </div>
+    </div>
+    <div style="position:absolute;bottom:30px;width:60%;height:30%;left:20%;text-align:center;">
+        <div><img src="img/logo.png"></div>
+        <p style="color:#aaaa;">Copyright © 2018 Tencent. All Rights Reserved.</p>
+        <p style="color:#aaaa;">上饶市521教育网，一家致力于IT线上教育的网站</p>
+    </div>
+</div>
+<script src="js/changevideo.js"></script>
+<script src="js/ask_layui_textarea.js"></script>
+
+</body>
+</html>

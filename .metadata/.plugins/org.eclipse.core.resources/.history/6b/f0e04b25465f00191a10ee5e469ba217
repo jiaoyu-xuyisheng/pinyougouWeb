@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+   <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="layui/css/layui.css">
+ <script type="text/javascript" src="plugins/angularjs/angular.min.js">  </script>    
+ <script type="text/javascript" src="js/mybase.js">  </script>
+ <script type="text/javascript" src="js/service/myindexServer.js">  </script>
+ <script type="text/javascript" src="js/controller/myindexController.js">  </script>  
+</head>
+<body   ng-app="myjiaoyu" ng-controller="myindexController" ng-init="findFriendlyLink();">
+
+<div class="dark" style="width:100%;height:400px;position:relative">
+
+<div style="position:absolute;width:90%;height:3px;background:#0F0F0F;left:5%;top:55%;"></div>
+
+    <div style="position:absolute;top:30px;width:80%;height:40%;left:10%;" >
+        <div style="margin-left:50px;float:left;margin-bottom:30px;" ng-repeat="en in friendlylist"><span class="footspan"><a href="{{en.furl}}">{{en.fname}}</a></span></div>
+    </div>
+    <div style="position:absolute;bottom:30px;width:60%;height:30%;left:20%;text-align:center;">
+        <div><img src="img/logo.png"></div>
+        <p style="color:#aaaa;">Copyright © 2018 Tencent. All Rights Reserved.</p>
+        <p style="color:#aaaa;">上饶市521教育网，一家致力于IT线上教育的网站</p>
+    </div>
+</div>
+</body>
+</html>

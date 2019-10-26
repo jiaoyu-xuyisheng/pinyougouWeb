@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=pinyougou-sellergoods-interface/src\/main\/java&lt;com.pinyougou.sellergoods.service{BrandService.java[BrandService" modifiers="513" timestamp="1536318445463"/>
+<typeInfo handle="=pinyougou-manager-web/D:\/BaiduNetdiskDownload\/repository\/org\/springframework\/spring-web\/4.2.4.RELEASE\/spring-web-4.2.4.RELEASE.jar&lt;org.springframework.web.multipart.commons(CommonsMultipartResolver.class[CommonsMultipartResolver" modifiers="33" timestamp="1465725561119"/>
+<typeInfo handle="=activemq-spring-consumer/D:\/BaiduNetdiskDownload\/repository\/org\/apache\/geronimo\/specs\/geronimo-jms_1.1_spec\/1.1.1\/geronimo-jms_1.1_spec-1.1.1.jar&lt;javax.jms(MessageListener.class[MessageListener" modifiers="1537" timestamp="1487151492983"/>
+<typeInfo handle="=pinyougou-pojo/D:\/AAA\/java\/jre\/lib\/rt.jar&lt;java.io(Serializable.class[Serializable" modifiers="1537" timestamp="1515480794702"/>
+<typeInfo handle="=pinyougou-cart-interface/src\/main\/java&lt;com.pinyougou.cart.service{CartService.java[CartService" modifiers="513" timestamp="1540043172802"/>
+<typeInfo handle="=pinyougou-pay-interface/src\/main\/java&lt;com.pinyougou.pay.service{WeixinPayService.java[WeixinPayService" modifiers="513" timestamp="1540329575354"/>
+<typeInfo handle="=pinyougou-shop-web/D:\/BaiduNetdiskDownload\/repository\/org\/springframework\/security\/spring-security-core\/4.1.0.RELEASE\/spring-security-core-4.1.0.RELEASE.jar&lt;org.springframework.security.core.userdetails(UserDetailsService.class[UserDetailsService" modifiers="1537" timestamp="1496974636686"/>
+<typeInfo handle="=jiaoyu-teacher-web/D:\/BaiduNetdiskDownload\/repository\/org\/springframework\/security\/spring-security-core\/4.1.0.RELEASE\/spring-security-core-4.1.0.RELEASE.jar&lt;org.springframework.security.authentication.encoding(PasswordEncoder.class[PasswordEncoder" modifiers="1050113" timestamp="1496974636686"/>
+<typeInfo handle="=jiaoyu-teacher-web/D:\/BaiduNetdiskDownload\/repository\/org\/springframework\/security\/spring-security-core\/4.1.0.RELEASE\/spring-security-core-4.1.0.RELEASE.jar&lt;org.springframework.security.crypto.password(PasswordEncoder.class[PasswordEncoder" modifiers="1537" timestamp="1496974636686"/>
+<typeInfo handle="=pinyougou-common/src\/main\/java&lt;util{FastDFSClient.java[FastDFSClient" modifiers="1" timestamp="1536912433965"/>
+<typeInfo handle="=activemq-spring-consumer/D:\/AAA\/java\/jre\/lib\/rt.jar&lt;java.util(ArrayList.class[ArrayList" modifiers="33" timestamp="1515480794702"/>
+</typeInfoHistroy>

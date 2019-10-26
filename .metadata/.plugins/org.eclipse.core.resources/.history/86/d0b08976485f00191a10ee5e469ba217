@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="521教育,远程教育,公开课,网络公开课,在线学习,在线教育,在线培训,在线课堂,名师讲堂,视频课程">
+    <meta name="description" itemprop="description" content="521教育推出的专业在线教育平台，聚合大量优质教育机构和名师，打造老师在线上课教学、学生及时互动学习的课堂。521教育，学习成就梦想！">
+    <title>521教育网</title>
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="layui/layui.all.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div  style="padding:0px;magin:0px;width:100%;height:80px;">
+	<iframe src="index_header.html" width="100%" frameborder="0"></iframe>
+</div>
+
+<div class="layui-col-xs12" style="height:3px;background:lightgray;"></div>
+
+<div  class="layui-container">
+    <div class="layui-row" style="height:70px;font-size:25px;line-height:70px;" >
+
+    <span>
+      <a href="">首页</a>&gt;
+      <a href="">演示</a>&gt;
+      <a><cite>导航元素</cite></a>
+    </span>
+    </div>
+
+
+    
+
+
+
+
+
+
+</div>
+
+
+
+    <div class="layui-row" style="min-height:70px;font-size:25px;line-height:70px;border:3px lightblue solid;margin-top:20px;" >
+        <div class="layui-col-md2 layui-col-xs4 layui-col-md-offset1">浏览量  <strong style="font-weight:bolder;color:gray;">↓</strong></div>
+        <div class="layui-col-md2 layui-col-xs4">评论量 <strong  style="font-weight:bolder;color:gray;">↓</strong> </div>
+        <div class="layui-col-md2 layui-col-xs4">好评度  <strong  style="font-weight:bolder;color:gray;">↓</strong></div>
+    </div>
+
+<div class="layui-row" >
+    <div class="layui-col-md3 layui-col-xs6" style="height:400px;">
+        <div  style="margin:2%;background:white;height:290px;width:96%;">
+            <img src="https://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLC9eMZE6s5OjUe2IDjZ5mNEsJ6iayE4UFgvzOUO9dZbT2IRhVricib78jTBnoO6XnPknc/356" width="100%;height:180px;">
+            <h3 style="width:100%;height:40px;line-height: 17px;font-size:17px;margin-top:15px;">HTML5前端开发VIP体验课（零基础到就业）</h3>
+            <div style="width:100%;height:30px;line-height:15px;color:red;margin-top:15px;">
+                <div class="layui-col-xs5" style="height:30px;">
+                    892人最近报名
+                </div>
+                <div class="layui-col-xs-offset2 layui-col-xs5" style="height:30px;">
+                    扣丁学堂
+                </div>
+            </div>
+            <div  style="width:100%;height:30px;line-height:30px;color:red;font-size:18px;font-weight:bold;">
+                免费
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-md3 layui-col-xs6" style="height:400px;">
+        <div  style="margin:2%;background:white;height:290px;width:96%;">
+            <img src="https://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLC9eMZE6s5OjUe2IDjZ5mNEsJ6iayE4UFgvzOUO9dZbT2IRhVricib78jTBnoO6XnPknc/356" width="100%;height:180px;">
+            <h3 style="width:100%;height:40px;line-height: 17px;font-size:17px;margin-top:15px;">HTML5前端开发VIP体验课（零基础到就业）</h3>
+            <div style="width:100%;height:30px;line-height:15px;color:red;margin-top:15px;">
+                <div class="layui-col-xs5" style="height:30px;">
+                    892人最近报名
+                </div>
+                <div class="layui-col-xs-offset2 layui-col-xs5" style="height:30px;">
+                    扣丁学堂
+                </div>
+            </div>
+            <div  style="width:100%;height:30px;line-height:30px;color:red;font-size:18px;font-weight:bold;">
+                免费
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-md3 layui-col-xs6" style="height:400px;">
+        <div  style="margin:2%;background:white;height:290px;width:96%;">
+            <img src="https://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLC9eMZE6s5OjUe2IDjZ5mNEsJ6iayE4UFgvzOUO9dZbT2IRhVricib78jTBnoO6XnPknc/356" width="100%;height:180px;">
+            <h3 style="width:100%;height:40px;line-height: 17px;font-size:17px;margin-top:15px;">HTML5前端开发VIP体验课（零基础到就业）</h3>
+            <div style="width:100%;height:30px;line-height:15px;color:red;margin-top:15px;">
+                <div class="layui-col-xs5" style="height:30px;">
+                    892人最近报名
+                </div>
+                <div class="layui-col-xs-offset2 layui-col-xs5" style="height:30px;">
+                    扣丁学堂
+                </div>
+            </div>
+            <div  style="width:100%;height:30px;line-height:30px;color:red;font-size:18px;font-weight:bold;">
+                免费
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-md3 layui-col-xs6" style="height:400px;">
+        <div  style="margin:2%;background:white;height:290px;width:96%;">
+            <img src="https://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLC9eMZE6s5OjUe2IDjZ5mNEsJ6iayE4UFgvzOUO9dZbT2IRhVricib78jTBnoO6XnPknc/356" width="100%;height:180px;">
+            <h3 style="width:100%;height:40px;line-height: 17px;font-size:17px;margin-top:15px;">HTML5前端开发VIP体验课（零基础到就业）</h3>
+            <div style="width:100%;height:30px;line-height:15px;color:red;margin-top:15px;">
+                <div class="layui-col-xs5" style="height:30px;">
+                    892人最近报名
+                </div>
+                <div class="layui-col-xs-offset2 layui-col-xs5" style="height:30px;">
+                    扣丁学堂
+                </div>
+            </div>
+            <div  style="width:100%;height:30px;line-height:30px;color:red;font-size:18px;font-weight:bold;">
+                免费
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-md3 layui-col-xs6" style="height:400px;">
+        <div  style="margin:2%;background:white;height:290px;width:96%;">
+            <img src="https://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLC9eMZE6s5OjUe2IDjZ5mNEsJ6iayE4UFgvzOUO9dZbT2IRhVricib78jTBnoO6XnPknc/356" width="100%;height:180px;">
+            <h3 style="width:100%;height:40px;line-height: 17px;font-size:17px;margin-top:15px;">HTML5前端开发VIP体验课（零基础到就业）</h3>
+            <div style="width:100%;height:30px;line-height:15px;color:red;margin-top:15px;">
+                <div class="layui-col-xs5" style="height:30px;">
+                    892人最近报名
+                </div>
+                <div class="layui-col-xs-offset2 layui-col-xs5" style="height:30px;">
+                    扣丁学堂
+                </div>
+            </div>
+            <div  style="width:100%;height:30px;line-height:30px;color:red;font-size:18px;font-weight:bold;">
+                免费
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-md3 layui-col-xs6" style="height:400px;">
+        <div  style="margin:2%;background:white;height:290px;width:96%;">
+            <img src="https://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLC9eMZE6s5OjUe2IDjZ5mNEsJ6iayE4UFgvzOUO9dZbT2IRhVricib78jTBnoO6XnPknc/356" width="100%;height:180px;">
+            <h3 style="width:100%;height:40px;line-height: 17px;font-size:17px;margin-top:15px;">HTML5前端开发VIP体验课（零基础到就业）</h3>
+            <div style="width:100%;height:30px;line-height:15px;color:red;margin-top:15px;">
+                <div class="layui-col-xs5" style="height:30px;">
+                    892人最近报名
+                </div>
+                <div class="layui-col-xs-offset2 layui-col-xs5" style="height:30px;">
+                    扣丁学堂
+                </div>
+            </div>
+            <div  style="width:100%;height:30px;line-height:30px;color:red;font-size:18px;font-weight:bold;">
+                免费
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-md3 layui-col-xs6" style="height:400px;">
+        <div  style="margin:2%;background:white;height:290px;width:96%;">
+            <img src="https://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLC9eMZE6s5OjUe2IDjZ5mNEsJ6iayE4UFgvzOUO9dZbT2IRhVricib78jTBnoO6XnPknc/356" width="100%;height:180px;">
+            <h3 style="width:100%;height:40px;line-height: 17px;font-size:17px;margin-top:15px;">HTML5前端开发VIP体验课（零基础到就业）</h3>
+            <div style="width:100%;height:30px;line-height:15px;color:red;margin-top:15px;">
+                <div class="layui-col-xs5" style="height:30px;">
+                    892人最近报名
+                </div>
+                <div class="layui-col-xs-offset2 layui-col-xs5" style="height:30px;">
+                    扣丁学堂
+                </div>
+            </div>
+            <div  style="width:100%;height:30px;line-height:30px;color:red;font-size:18px;font-weight:bold;">
+                免费
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-md3 layui-col-xs6" style="height:400px;">
+        <div  style="margin:2%;background:white;height:290px;width:96%;">
+            <img src="https://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLC9eMZE6s5OjUe2IDjZ5mNEsJ6iayE4UFgvzOUO9dZbT2IRhVricib78jTBnoO6XnPknc/356" width="100%;height:180px;">
+            <h3 style="width:100%;height:40px;line-height: 17px;font-size:17px;margin-top:15px;">HTML5前端开发VIP体验课（零基础到就业）</h3>
+            <div style="width:100%;height:30px;line-height:15px;color:red;margin-top:15px;">
+                <div class="layui-col-xs5" style="height:30px;">
+                    892人最近报名
+                </div>
+                <div class="layui-col-xs-offset2 layui-col-xs5" style="height:30px;">
+                    扣丁学堂
+                </div>
+            </div>
+            <div  style="width:100%;height:30px;line-height:30px;color:red;font-size:18px;font-weight:bold;">
+                免费
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-md3 layui-col-xs6" style="height:400px;">
+        <div  style="margin:2%;background:white;height:290px;width:96%;">
+            <img src="https://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLC9eMZE6s5OjUe2IDjZ5mNEsJ6iayE4UFgvzOUO9dZbT2IRhVricib78jTBnoO6XnPknc/356" width="100%;height:180px;">
+            <h3 style="width:100%;height:40px;line-height: 17px;font-size:17px;margin-top:15px;">HTML5前端开发VIP体验课（零基础到就业）</h3>
+            <div style="width:100%;height:30px;line-height:15px;color:red;margin-top:15px;">
+                <div class="layui-col-xs5" style="height:30px;">
+                    892人最近报名
+                </div>
+                <div class="layui-col-xs-offset2 layui-col-xs5" style="height:30px;">
+                    扣丁学堂
+                </div>
+            </div>
+            <div  style="width:100%;height:30px;line-height:30px;color:red;font-size:18px;font-weight:bold;">
+                免费
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<iframe src="index_foot.html" width="100%"  frameborder="0" scrolling="no" height="420px">
+</div>
+</body>
+</html>

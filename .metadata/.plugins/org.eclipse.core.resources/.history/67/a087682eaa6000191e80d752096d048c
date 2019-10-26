@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jiaoyu.mapper.KeMapper" >
+  <resultMap id="BaseResultMap" type="com.jiaoyu.pojo.Ke" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="publisher_id" property="publisherId" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="imgurl" property="imgurl" jdbcType="VARCHAR" />
+    <result column="keurl" property="keurl" jdbcType="VARCHAR" />
+    <result column="charge" property="charge" jdbcType="VARCHAR" />
+    <result column="page_view" property="pageView" jdbcType="INTEGER" />
+    <result column="sm_id" property="smId" jdbcType="INTEGER" />
+    <result column="level" property="level" jdbcType="INTEGER" />
+    <result column="popular" property="popular" jdbcType="INTEGER" />
+    <result column="details" property="details" jdbcType="VARCHAR" />
+    <result column="is_delete" property="isDelete" jdbcType="INTEGER" />
+    <result column="is_ok" property="isOk" jdbcType="INTEGER" />
+    <result column="first_id" property="firstId" jdbcType="INTEGER" />
+    <result column="kecreatetime" property="kecreatetime" jdbcType="TIMESTAMP" />
+    <result column="company" property="company" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, publisher_id, title, imgurl, keurl, charge, page_view, sm_id, level, popular, 
+    details, is_delete, is_ok, first_id, kecreatetime, company
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.jiaoyu.pojo.KeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from ke
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from ke
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from ke
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.jiaoyu.pojo.KeExample" >
+    delete from ke
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.jiaoyu.pojo.Ke" >
+    insert into ke (id, publisher_id, title, 
+      imgurl, keurl, charge, 
+      page_view, sm_id, level, 
+      popular, details, is_delete, 
+      is_ok, first_id, kecreatetime, 
+      company)
+    values (#{id,jdbcType=INTEGER}, #{publisherId,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{imgurl,jdbcType=VARCHAR}, #{keurl,jdbcType=VARCHAR}, #{charge,jdbcType=VARCHAR}, 
+      #{pageView,jdbcType=INTEGER}, #{smId,jdbcType=INTEGER}, #{level,jdbcType=INTEGER}, 
+      #{popular,jdbcType=INTEGER}, #{details,jdbcType=VARCHAR}, #{isDelete,jdbcType=INTEGER}, 
+      #{isOk,jdbcType=INTEGER}, #{firstId,jdbcType=INTEGER}, #{kecreatetime,jdbcType=TIMESTAMP}, 
+      #{company,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jiaoyu.pojo.Ke" >
+    insert into ke
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="publisherId != null" >
+        publisher_id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="imgurl != null" >
+        imgurl,
+      </if>
+      <if test="keurl != null" >
+        keurl,
+      </if>
+      <if test="charge != null" >
+        charge,
+      </if>
+      <if test="pageView != null" >
+        page_view,
+      </if>
+      <if test="smId != null" >
+        sm_id,
+      </if>
+      <if test="level != null" >
+        level,
+      </if>
+      <if test="popular != null" >
+        popular,
+      </if>
+      <if test="details != null" >
+        details,
+      </if>
+      <if test="isDelete != null" >
+        is_delete,
+      </if>
+      <if test="isOk != null" >
+        is_ok,
+      </if>
+      <if test="firstId != null" >
+        first_id,
+      </if>
+      <if test="kecreatetime != null" >
+        kecreatetime,
+      </if>
+      <if test="company != null" >
+        company,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="publisherId != null" >
+        #{publisherId,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="imgurl != null" >
+        #{imgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="keurl != null" >
+        #{keurl,jdbcType=VARCHAR},
+      </if>
+      <if test="charge != null" >
+        #{charge,jdbcType=VARCHAR},
+      </if>
+      <if test="pageView != null" >
+        #{pageView,jdbcType=INTEGER},
+      </if>
+      <if test="smId != null" >
+        #{smId,jdbcType=INTEGER},
+      </if>
+      <if test="level != null" >
+        #{level,jdbcType=INTEGER},
+      </if>
+      <if test="popular != null" >
+        #{popular,jdbcType=INTEGER},
+      </if>
+      <if test="details != null" >
+        #{details,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null" >
+        #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="isOk != null" >
+        #{isOk,jdbcType=INTEGER},
+      </if>
+      <if test="firstId != null" >
+        #{firstId,jdbcType=INTEGER},
+      </if>
+      <if test="kecreatetime != null" >
+        #{kecreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="company != null" >
+        #{company,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.jiaoyu.pojo.KeExample" resultType="java.lang.Integer" >
+    select count(*) from ke
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  
+  	
+	<select id="selectByPageNo" resultMap="BaseResultMap">
+  	select * from ke order by popular  desc limit #{1} offset #{0}
+  </select>
+  
+  
+  <select id="selectByNewKe" resultMap="BaseResultMap">
+  	select * from ke order by kecreatetime desc limit #{1} offset #{0}
+  </select>
+  
+  
+  <update id="updateByExampleSelective" parameterType="map" >
+    update ke
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.publisherId != null" >
+        publisher_id = #{record.publisherId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.title != null" >
+        title = #{record.title,jdbcType=VARCHAR},
+      </if>
+      <if test="record.imgurl != null" >
+        imgurl = #{record.imgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.keurl != null" >
+        keurl = #{record.keurl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.charge != null" >
+        charge = #{record.charge,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pageView != null" >
+        page_view = #{record.pageView,jdbcType=INTEGER},
+      </if>
+      <if test="record.smId != null" >
+        sm_id = #{record.smId,jdbcType=INTEGER},
+      </if>
+      <if test="record.level != null" >
+        level = #{record.level,jdbcType=INTEGER},
+      </if>
+      <if test="record.popular != null" >
+        popular = #{record.popular,jdbcType=INTEGER},
+      </if>
+      <if test="record.details != null" >
+        details = #{record.details,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isDelete != null" >
+        is_delete = #{record.isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="record.isOk != null" >
+        is_ok = #{record.isOk,jdbcType=INTEGER},
+      </if>
+      <if test="record.firstId != null" >
+        first_id = #{record.firstId,jdbcType=INTEGER},
+      </if>
+      <if test="record.kecreatetime != null" >
+        kecreatetime = #{record.kecreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.company != null" >
+        company = #{record.company,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update ke
+    set id = #{record.id,jdbcType=INTEGER},
+      publisher_id = #{record.publisherId,jdbcType=VARCHAR},
+      title = #{record.title,jdbcType=VARCHAR},
+      imgurl = #{record.imgurl,jdbcType=VARCHAR},
+      keurl = #{record.keurl,jdbcType=VARCHAR},
+      charge = #{record.charge,jdbcType=VARCHAR},
+      page_view = #{record.pageView,jdbcType=INTEGER},
+      sm_id = #{record.smId,jdbcType=INTEGER},
+      level = #{record.level,jdbcType=INTEGER},
+      popular = #{record.popular,jdbcType=INTEGER},
+      details = #{record.details,jdbcType=VARCHAR},
+      is_delete = #{record.isDelete,jdbcType=INTEGER},
+      is_ok = #{record.isOk,jdbcType=INTEGER},
+      first_id = #{record.firstId,jdbcType=INTEGER},
+      kecreatetime = #{record.kecreatetime,jdbcType=TIMESTAMP},
+      company = #{record.company,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jiaoyu.pojo.Ke" >
+    update ke
+    <set >
+      <if test="publisherId != null" >
+        publisher_id = #{publisherId,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="imgurl != null" >
+        imgurl = #{imgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="keurl != null" >
+        keurl = #{keurl,jdbcType=VARCHAR},
+      </if>
+      <if test="charge != null" >
+        charge = #{charge,jdbcType=VARCHAR},
+      </if>
+      <if test="pageView != null" >
+        page_view = #{pageView,jdbcType=INTEGER},
+      </if>
+      <if test="smId != null" >
+        sm_id = #{smId,jdbcType=INTEGER},
+      </if>
+      <if test="level != null" >
+        level = #{level,jdbcType=INTEGER},
+      </if>
+      <if test="popular != null" >
+        popular = #{popular,jdbcType=INTEGER},
+      </if>
+      <if test="details != null" >
+        details = #{details,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null" >
+        is_delete = #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="isOk != null" >
+        is_ok = #{isOk,jdbcType=INTEGER},
+      </if>
+      <if test="firstId != null" >
+        first_id = #{firstId,jdbcType=INTEGER},
+      </if>
+      <if test="kecreatetime != null" >
+        kecreatetime = #{kecreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="company != null" >
+        company = #{company,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jiaoyu.pojo.Ke" >
+    update ke
+    set publisher_id = #{publisherId,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      imgurl = #{imgurl,jdbcType=VARCHAR},
+      keurl = #{keurl,jdbcType=VARCHAR},
+      charge = #{charge,jdbcType=VARCHAR},
+      page_view = #{pageView,jdbcType=INTEGER},
+      sm_id = #{smId,jdbcType=INTEGER},
+      level = #{level,jdbcType=INTEGER},
+      popular = #{popular,jdbcType=INTEGER},
+      details = #{details,jdbcType=VARCHAR},
+      is_delete = #{isDelete,jdbcType=INTEGER},
+      is_ok = #{isOk,jdbcType=INTEGER},
+      first_id = #{firstId,jdbcType=INTEGER},
+      kecreatetime = #{kecreatetime,jdbcType=TIMESTAMP},
+      company = #{company,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

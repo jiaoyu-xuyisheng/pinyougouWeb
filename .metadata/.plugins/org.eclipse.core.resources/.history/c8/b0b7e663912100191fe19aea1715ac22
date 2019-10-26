@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="521教育,远程教育,公开课,网络公开课,在线学习,在线教育,在线培训,在线课堂,名师讲堂,视频课程">
+    <meta name="description" itemprop="description" content="521教育推出的专业在线教育平台，聚合大量优质教育机构和名师，打造老师在线上课教学、学生及时互动学习的课堂。521教育，学习成就梦想！">
+    <title>521教育网</title>
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="layui/layui.all.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+  	 <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="plugins/angularjs/angular.min.js">  </script>
+    
+     <script type="text/javascript" src="js/mybase.js">  </script>
+    <script type="text/javascript" src="js/service/myindexServer.js">  </script>
+    <script type="text/javascript" src="js/controller/myindexController.js">  </script>  
+    
+ 
+    
+</head>
+<body   ng-app="myjiaoyu" ng-controller="myindexController"  ng-init="findAll();">
+<!--头部-->
+<div  style="padding:0px;magin:0px;width:100%">
+    <div class="layui-row" style="height:80px;">
+        <a class="layui-col-xs3 layui-col-xs-offset1" style="background-image: url(img/953.png);background-position-x:10px;
+        background-position-y:10px;display:block;cursor:pointer;
+        height:100%;" href="index.html">
+        </a>
+        <div class="layui-col-xs5" style="height:100%;position:relative">
+            <div style="position:absolute;height:40px;width:80%;top:20px;left:12%">
+
+                <input type="text" placeholder="请输入你要找的课程！"  class="layui-input" style="float:left;width:80%">
+                <button class="layui-btn" style="float:left">
+                    <i class="layui-icon">&#xe615;</i>
+                </button>
+            </div>
+        </div>
+        <div class="layui-col-xs3" style="height:100%;">
+           <ul class="login_tab">
+              <li>
+                  <a>
+                      开课
+                  </a>
+              </li>
+               <li>
+                   <a>
+                       登录</a>
+               </li>
+               <li>
+                   <a href="regiest.html">注册</a></li>
+           </ul>
+        </div>
+    </div>
+</div>
+<!--头部-->
+
+<!--侧边栏-->
+<div  style="position:relative;background:yellow;width:100%;" >
+    <div  style="position:absolute; width:20%;left:2%;background:rgba(0,0,0,.5);height:280px;z-index:10;">
+          <script>
+		    $.post('secondmenu/findMeun.do', function(data) {
+		    	 var myinter="";
+		    	  for(var i=0;i<data.length;i++){
+		    		      myinter="<li class='listyle'>"+data.fistdate+"<span>";
+		              	  myinter+="<div class='side'><ul class='side_ul'>";
+		              	
+		              		
+		              	  myinter+="<li><a href="+data.date.smUrl+"></a></li>"
+		              	  myinter+="<li class='layui-clear'>"+data.date.smName+"</li>"
+		              	
+		              	myinter+=" </ul> </div></li>"            
+		    	  }
+		    	  $("#brank").html(myinter);
+		    	  
+		    	});
+    	</script> 
+        <ul style="position:relative"  id="brank">
+        
+            <li class="listyle"><span></span>
+            
+                <div class="side">
+                            <ul class="side_ul">
+                                <li><a href=""></a></li>
+                                <li class="layui-clear"></li>
+                            </ul>
+
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div  style="position:absolute; width:15%;right:1%;background:rgba(0,0,0,.5);;height:250px;top:10px;z-index:10;"></div>
+</div>
+<!--侧边栏-->
+
+
+<!--  轮播图-->
+    <div class="layui-carousel dark" id="test1"  style="width:100%;">
+        <div carousel-item>
+            <div style="background:indianred;">
+                    <img src="img/1.jpg" class="layui-col-md-offset3 layui-col-xs12 layui-col-md7">
+            </div>
+            <div style="background:darkgoldenrod;" >
+                <img src="img/2.jpg" class="layui-col-md-offset3 layui-col-xs12  layui-col-md7">
+            </div>
+            <div  style="background:lightcoral;">
+                <img src="img/3.jpg"  class="layui-col-md-offset3 layui-col-xs12  layui-col-md7">
+            </div>
+            <div  style="background:darkgreen;">
+                <img src="img/4.jpg"  class="layui-col-md-offset3 layui-col-xs12  layui-col-md7">
+            </div>
+        </div>
+    </div>
+<!--  轮播图-->
+
+
+
+<div style="width:100%" >
+    <!--选项卡-->
+<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title">
+        <li class="layui-this">网站设置</li>
+        <li>用户管理</li>
+        <li>权限分配</li>
+        <li>商品管理</li>
+        <li>订单管理</li>
+    </ul>  	
+    <div class="layui-tab-content" style="height: 100px;">
+ 
+        <div class="layui-tab-item layui-show" >
+        
+                <div  class="layui-row" >
+                    <div  class="layui-col-xs5 box  layui-col-md2"   ng-repeat="entity in list" >
+                    	<img src="{{entity.imgurl}}"  width="100%">
+                    	<h3 style="padding:5px 15px;font-size:15px;height:60px;">{{entity.title}}</h3>
+                    	<div class="layui-col-xs12"">
+                    		<div class="layui-col-xs3" style="padding:10px;">{{entity.charge}}</div>
+                    		<div  class="layui-col-xs-offset4 layui-col-xs4" style="padding:10px;">{{entity.publisherId}}</div>
+                    	</div>
+                    </div>
+                </div>
+        </div>
+
+        <div class="layui-tab-item">
+                <div  class="layui-row" >
+                    <div  class="layui-col-xs5 box dark  layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box dark  layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box dark  layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box dark  layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box dark  layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box dark  layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box dark  layui-col-md2" ></div>
+                </div>
+        </div>
+
+
+        <div class="layui-tab-item">
+
+                <div  class="layui-row" >
+                    <div  class="layui-col-xs5 box blue  layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box blue  layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box blue  layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box blue  layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box blue  layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box blue  layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box blue  layui-col-md2" ></div>
+                </div>
+        </div>
+
+
+        <div class="layui-tab-item">
+
+                <div  class="layui-row" >
+                    <div  class="layui-col-xs5 box red  layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box red  layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box red  layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box red  layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box red  layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box red  layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box red  layui-col-md2" ></div>
+                </div>
+
+
+
+        </div>
+
+
+        <div class="layui-tab-item">
+
+                <div  class="layui-row" >
+                    <div  class="layui-col-xs5 box yellow   layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box yellow   layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box yellow   layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box yellow   layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box yellow   layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box yellow  layui-col-md2" ></div>
+                    <div  class="layui-col-xs5 box yellow  layui-col-md2" ></div>
+                </div>
+
+
+        </div>
+    </div>
+</div>
+    <!--选项卡-->
+
+
+<div class="layui-row">
+    <div class="layui-col-xs-offset4 layui-col-xs4">
+         <h3 style="font-size:30px;"><i class="layui-icon" style="font-size: 40px; color: #1E9FFF;">&#xe62e;</i>    精品推荐</h3>
+    </div>
+</div>
+
+    <div class="layui-row">
+      <div  class="layui-col-xs5 box yellow   layui-col-md2" ></div>
+      <div  class="layui-col-xs5 box yellow   layui-col-md2" ></div>
+      <div  class="layui-col-xs5 box yellow   layui-col-md2" ></div>
+      <div  class="layui-col-xs5 box yellow   layui-col-md2" ></div>
+      <div  class="layui-col-xs5 box yellow   layui-col-md2" ></div>
+      <div  class="layui-col-xs5 box yellow  layui-col-md2" ></div>
+      <div  class="layui-col-xs5 box yellow  layui-col-md2" ></div>
+  </div>
+
+    <div class="layui-row">
+        <div class="layui-col-xs-offset4 layui-col-xs4">
+            <h3 style="font-size:30px;"><i class="layui-icon" style="font-size: 40px; color: #1E9FFF;">&#xe62e;</i> 最新上线</h3>
+        </div>
+    </div>
+
+    <div class="layui-row">
+        <div  class="layui-col-xs5 box yellow   layui-col-md3" ></div>
+        <div  class="layui-col-xs5 box yellow   layui-col-md3" ></div>
+        <div  class="layui-col-xs5 box yellow   layui-col-md3" ></div>
+        <div  class="layui-col-xs5 box yellow   layui-col-md3" ></div>
+        <div  class="layui-col-xs5 box yellow   layui-col-md3" ></div>
+        <div  class="layui-col-xs5 box yellow  layui-col-md3" ></div>
+        <div  class="layui-col-xs5 box yellow  layui-col-md3" ></div>
+    </div>
+
+
+</div>
+
+<div class="dark" style="width:100%;height:400px;position:relative">
+
+<div style="position:absolute;width:90%;height:3px;background:#0F0F0F;left:5%;top:55%;"></div>
+
+    <div style="position:absolute;top:30px;width:80%;height:40%;left:10%;">
+        <span class="footspan"><a>腾讯大学腾讯精品课</a></span><span  class="footspan"><a>腾讯网教育频道</a></span>
+        <span  class="footspan"><a>腾讯精品课</a></span>
+    </div>
+    <div style="position:absolute;bottom:30px;width:60%;height:30%;left:20%;text-align:center;">
+        <div><img src="img/logo.png"></div>
+        <p style="color:#aaaa;">Copyright © 2018 Tencent. All Rights Reserved.</p>
+        <p style="color:#aaaa;">上饶市521教育网，一家致力于IT线上教育的网站</p>
+    </div>
+</div>
+
+
+
+
+
+
+</body>
+<script>
+    layui.use('carousel', function(){
+        var carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+            elem: '#test1'
+            ,width: '100%' //设置容器宽度
+            ,arrow: 'always' //始终显示箭头
+            ,anim: 'fade' //切换动画方式
+        });
+    });
+</script>
+</html>

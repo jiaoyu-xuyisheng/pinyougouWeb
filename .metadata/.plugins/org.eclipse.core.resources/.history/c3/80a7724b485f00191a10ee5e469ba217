@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="521教育,远程教育,公开课,网络公开课,在线学习,在线教育,在线培训,在线课堂,名师讲堂,视频课程">
+    <meta name="description" itemprop="description" content="521教育推出的专业在线教育平台，聚合大量优质教育机构和名师，打造老师在线上课教学、学生及时互动学习的课堂。521教育，学习成就梦想！">
+    <title>521教育网</title>
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="layui/layui.all.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+     <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.css">
+  	 <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="plugins/angularjs/angular.min.js">  </script>
+    
+     <script type="text/javascript" src="plugins/bootstrap/js/bootstrap.min.js">  </script>
+     
+    <script type="text/javascript" src="js/mybase.js">  </script>
+    <script type="text/javascript" src="js/service/myindexServer.js">  </script>
+    <script type="text/javascript" src="js/controller/myindexController.js">  </script>  
+    
+ 
+    
+</head>
+<body   ng-app="myjiaoyu" ng-controller="myindexController"  ng-init="findAll();findMeun();findFriendlyLink();findPoupleList();findClassAll();findByFirstId(1);findByFirstId(2);findByFirstId(3);findByFirstId(4);findByFirstId(5);findByFirstId(6);findByFirstId(7);findByFirstId(8);findByFirstId(9);findByFirstId(10);findNewKeList();findKegdAll();findNewsAll();">
+<!--头部-->
+
+<div  style="padding:0px;magin:0px;width:100%;height:80px;">
+	<iframe src="index_header.html" width="100%" frameborder="0"></iframe>
+</div>
+
+<!--头部-->
+
+<!--侧边栏-->
+<div  style="position:relative;background:yellow;width:100%;" >
+    <div  style="position:absolute; width:20%;left:2%;background:rgba(0,0,0,.5);height:350px;z-index:10;">
+    	
+        <ul style="position:relative"  id="brank" ng-repeat="entity in mylist">
+        
+            <li class="listyle"><span>{{entity.fistdate}}</span>
+             
+                <div class="side">
+                            <ul class="side_ul" ng-repeat="op in entity.date">
+                                <li style="float:left"><a href="{{op.smUrl}}" style="color:#1E9FFF;">{{op.smName}}</a></li>
+                            </ul>
+
+                </div>
+            </li> 
+        </ul>
+    </div>
+    <div style="position:absolute; width:15%;right:1%;background:rgba(0,0,0,.5);;height:330px;top:10px;z-index:10;">
+    	<div ng-repeat="entity in Newslist" style="padding:10px;padding-left:20px;font-size:15px;height:38px;overflow:hidden;text-align:center;">
+    		<a style="color:yellow;text-align:center;" class="listyle" href="{{entity.newurl}}">{{entity.newstitle}}</a>
+    	</div>
+    </div>
+</div>
+<!--侧边栏-->
+
+
+<!--banner轮播-->
+	<div class="yui3-u Center banerArea">
+	
+	
+	
+					<div id="myCarousel" data-ride="carousel" data-interval="4000" class="carousel slide">
+					  <ol class="carousel-indicators">
+					    <li data-target="#myCarousel" data-slide-to="{{$index}}" class="{{$index==0?'active':''}}" ng-repeat="item in Kegdlist">    
+					    </li>
+					  </ol>
+					  <div class="carousel-inner">
+					    <div class="{{$index==0?'active':''}} item" ng-repeat="item in Kegdlist">
+					   	<a href="{{item.gdurl}}">
+					    		<img src="{{item.gdimg}}"  style="width:100%;height:350px"/>
+					      </a>
+					    </div>
+					  <a class="carousel-control left" style="top:40%;left:17%" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+					  <a class="carousel-control right" href="#myCarousel" data-slide="next"  style="top:40%;right:12%;" >&rsaquo;</a>
+					</div>
+</div>
+
+
+
+
+<div style="width:100%" >
+    <!--选项卡-->
+<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title">
+        <li  ng-repeat="en in mylist" class="{{$index==0?'layui-this':''}}" style="float:left;">{{en.fistdate}}</li>
+    </ul>  	
+    <div class="layui-tab-content" style="height: 100px;">
+       
+        <div class="layui-tab-item layui-show" >
+        
+                <div  class="layui-row">
+                    <a  class="layui-col-xs5 box  layui-col-md2"   ng-repeat="entity in firstidlist1" href="{{entity.keurl}}">
+                    	<img src="{{entity.imgurl}}"  width="100%">
+                    	<h3 style="padding:5px 15px;font-size:15px;height:45px;">{{entity.title}}</h3>
+                    	<div class="layui-col-xs12"">
+                    		<div class="layui-col-xs3" style="padding:10px;">{{entity.charge}}</div>
+                    		<div  class="layui-col-xs-offset2 layui-col-xs6" style="padding:10px;">{{entity.company}}</div>
+                    	</div>
+                    </a>
+                </div>
+        </div>
+
+       <div class="layui-tab-item" >
+        
+                <div  class="layui-row" >
+                    <a  class="layui-col-xs5 box  layui-col-md2"   ng-repeat="entity in firstidlist2" href="{{entity.keurl}}">
+                    	<img src="{{entity.imgurl}}"  width="100%">
+                    	<h3 style="padding:5px 15px;font-size:15px;height:45px;">{{entity.title}}</h3>
+                    	<div class="layui-col-xs12"">
+                    		<div class="layui-col-xs3" style="padding:10px;">{{entity.charge}}</div>
+                    		<div  class="layui-col-xs-offset2 layui-col-xs6" style="padding:10px;">{{entity.company}}</div>
+                    	</div>
+                    </a>
+                </div>
+        </div>
+
+
+       <div class="layui-tab-item" >
+        
+                <div  class="layui-row" >
+                    <a  class="layui-col-xs5 box  layui-col-md2"   ng-repeat="entity in firstidlist3"  href="{{entity.keurl}}">
+                    	<img src="{{entity.imgurl}}"  width="100%">
+                    	<h3 style="padding:5px 15px;font-size:15px;height:45px;">{{entity.title}}</h3>
+                    	<div class="layui-col-xs12"">
+                    		<div class="layui-col-xs3" style="padding:10px;">{{entity.charge}}</div>
+                    		<div  class="layui-col-xs-offset2 layui-col-xs6" style="padding:10px;">{{entity.company}}</div>
+                    	</div>
+                    </a>
+                </div>
+        </div>
+
+
+       <div class="layui-tab-item" >
+        
+                <div  class="layui-row" >
+                    <a  class="layui-col-xs5 box  layui-col-md2"   ng-repeat="entity in firstidlist4"  href="{{entity.keurl}}">
+                    	<img src="{{entity.imgurl}}"  width="100%">
+                    	<h3 style="padding:5px 15px;font-size:15px;height:45px;">{{entity.title}}</h3>
+                    	<div class="layui-col-xs12"">
+                    		<div class="layui-col-xs3" style="padding:10px;">{{entity.charge}}</div>
+                    		<div  class="layui-col-xs-offset2 layui-col-xs6" style="padding:10px;">{{entity.company}}</div>
+                    	</div>
+                    </a>
+                </div>
+        </div>
+
+
+       <div class="layui-tab-item" >
+        
+                <div  class="layui-row" >
+                    <a  class="layui-col-xs5 box  layui-col-md2"   ng-repeat="entity in firstidlist5"   href="{{entity.keurl}}">
+                    	<img src="{{entity.imgurl}}"  width="100%">
+                    	<h3 style="padding:5px 15px;font-size:15px;height:45px;">{{entity.title}}</h3>
+                    	<div class="layui-col-xs12"">
+                    		<div class="layui-col-xs3" style="padding:10px;">{{entity.charge}}</div>
+                    		<div  class="layui-col-xs-offset2 layui-col-xs6" style="padding:10px;">{{entity.company}}</div>
+                    	</div>
+                    </a>
+                </div>
+        </div>
+
+
+       <div class="layui-tab-item" >
+        
+                <div  class="layui-row" >
+                    <a  class="layui-col-xs5 box  layui-col-md2"   ng-repeat="entity in firstidlist6"  href="{{entity.keurl}}">
+                    	<img src="{{entity.imgurl}}"  width="100%">
+                    	<h3 style="padding:5px 15px;font-size:15px;height:45px;">{{entity.title}}</h3>
+                    	<div class="layui-col-xs12"">
+                    		<div class="layui-col-xs3" style="padding:10px;">{{entity.charge}}</div>
+                    		<div  class="layui-col-xs-offset2 layui-col-xs6" style="padding:10px;">{{entity.company}}</div>
+                    	</div>
+                    </a>
+                </div>
+        </div>
+
+
+       <div class="layui-tab-item" >
+        
+                <div  class="layui-row" >
+                    <a  class="layui-col-xs5 box  layui-col-md2"   ng-repeat="entity in firstidlist7"  href="{{entity.keurl}}">
+                    	<img src="{{entity.imgurl}}"  width="100%">
+                    	<h3 style="padding:5px 15px;font-size:15px;height:45px;">{{entity.title}}</h3>
+                    	<div class="layui-col-xs12"">
+                    		<div class="layui-col-xs3" style="padding:10px;">{{entity.charge}}</div>
+                    		<div  class="layui-col-xs-offset2 layui-col-xs6" style="padding:10px;">{{entity.company}}</div>
+                    	</div>
+                    </a>
+                </div>
+        </div>
+
+
+       <div class="layui-tab-item" >
+        
+                <div  class="layui-row" >
+                    <a  class="layui-col-xs5 box  layui-col-md2"   ng-repeat="entity in firstidlist8"  href="{{entity.keurl}}">
+                    	<img src="{{entity.imgurl}}"  width="100%">
+                    	<h3 style="padding:5px 15px;font-size:15px;height:45px;">{{entity.title}}</h3>
+                    	<div class="layui-col-xs12"">
+                    		<div class="layui-col-xs3" style="padding:10px;">{{entity.charge}}</div>
+                    		<div  class="layui-col-xs-offset2 layui-col-xs6" style="padding:10px;">{{entity.company}}</div>
+                    	</div>
+                    </a>
+                </div>
+        </div>
+
+
+       <div class="layui-tab-item" >
+        
+                <div  class="layui-row" >
+                    <a  class="layui-col-xs5 box  layui-col-md2"   ng-repeat="entity in firstidlist9"  href="{{entity.keurl}}">
+                    	<img src="{{entity.imgurl}}"  width="100%">
+                    	<h3 style="padding:5px 15px;font-size:15px;height:45px;">{{entity.title}}</h3>
+                    	<div class="layui-col-xs12"">
+                    		<div class="layui-col-xs3" style="padding:10px;">{{entity.charge}}</div>
+                    		<div  class="layui-col-xs-offset2 layui-col-xs6" style="padding:10px;">{{entity.company}}</div>
+                    	</div>
+                    </a>
+                </div>
+        </div>
+
+
+       <div class="layui-tab-item" >
+        
+                <div  class="layui-row" >
+                    <a  class="layui-col-xs5 box  layui-col-md2"   ng-repeat="entity in firstidlist10"  href="{{entity.keurl}}">
+                    	<img src="{{entity.imgurl}}"  width="100%">
+                    	<h3 style="padding:5px 15px;font-size:15px;height:45px;">{{entity.title}}</h3>
+                    	<div class="layui-col-xs12"">
+                    		<div class="layui-col-xs3" style="padding:10px;">{{entity.charge}}</div>
+                    		<div  class="layui-col-xs-offset2 layui-col-xs6" style="padding:10px;">{{entity.company}}</div>
+                    	</div>
+                    </a>
+                </div>
+        </div>
+
+        
+        
+    </div>
+</div>
+    <!--选项卡-->
+
+
+<div class="layui-row">
+    <div class="layui-col-xs-offset4 layui-col-xs4">
+         <h3 style="font-size:30px;"><i class="layui-icon" style="font-size: 40px; color: #1E9FFF;">&#xe62e;</i>    精品推荐</h3>
+    </div>
+</div>
+
+    <div class="layui-row">
+  		<a  class="layui-col-xs5 box  layui-col-md2"   ng-repeat="po in pouplelist"  href="{{po.keurl}}">
+           	<img src="{{po.imgurl}}"  width="100%">
+           	<h3 style="padding:5px 15px;font-size:15px;height:45px;">{{po.title}}</h3>
+           	<div class="layui-col-xs12"">
+           		<div class="layui-col-xs3" style="padding:10px;">{{po.charge}}</div>
+           		<div  class="layui-col-xs-offset2 layui-col-xs6" style="padding:10px;">{{po.company}}</div>
+           	</div>
+        </a>
+  	</div>
+
+    <div class="layui-row">
+        <div class="layui-col-xs-offset4 layui-col-xs4">
+            <h3 style="font-size:30px;"><i class="layui-icon" style="font-size: 40px; color: #1E9FFF;">&#xe62e;</i> 最新上线</h3>
+        </div>
+    </div>
+
+    <div class="layui-row">
+       	<a  class="layui-col-xs5 box  layui-col-md2"   ng-repeat="po in newkelist"  href="{{po.keurl}}">
+           	<img src="{{po.imgurl}}"  width="100%">
+           	<h3 style="padding:5px 15px;font-size:15px;height:45px;">{{po.title}}</h3>
+           	<div class="layui-col-xs12"">
+           		<div class="layui-col-xs3" style="padding:10px;">{{po.charge}}</div>
+           		<div  class="layui-col-xs-offset2 layui-col-xs6" style="padding:10px;">{{po.company}}</div>
+           	</div>
+        </a>
+    </div>
+
+
+</div>
+
+<div>
+
+<iframe src="index_foot.html" width="100%"  frameborder="0"  scrolling="no">
+</div>
+
+
+
+
+<script type="text/javascript">
+    layui.use('carousel', function(){
+        var carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+            elem: '#test1'
+            ,width: '100%' //设置容器宽度
+            ,arrow: 'always' //始终显示箭头
+            ,anim: 'fade' //切换动画方式
+        });
+    });
+    
+   
+</script>
+
+</body>
+
+</html>

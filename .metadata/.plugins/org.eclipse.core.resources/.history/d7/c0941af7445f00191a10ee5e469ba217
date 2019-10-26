@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="521教育,远程教育,公开课,网络公开课,在线学习,在线教育,在线培训,在线课堂,名师讲堂,视频课程">
+    <meta name="description" itemprop="description" content="521教育推出的专业在线教育平台，聚合大量优质教育机构和名师，打造老师在线上课教学、学生及时互动学习的课堂。521教育，学习成就梦想！">
+    <title>521教育网专业在线教育平台</title>
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="layui/css/layui.css"  media="all">
+    <script src="layui/jquery.min.js"></script>
+    <script src="layui/layui.all.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/item_list.css">
+</head>
+<body>
+<!--头部-->
+<div  style="width:100%;padding:0px;magin:0px;">
+    <div class="layui-row" style="height:80px;">
+        <a class="layui-col-xs3 layui-col-xs-offset1" style="background-image: url(img/953.png);background-position-x:10px;
+        background-position-y:10px;display:block;cursor:pointer;
+        height:100%;" href="https://ke.qq.com">
+        </a>
+        <div class="layui-col-xs5" style="height:100%;position:relative">
+            <div style="position:absolute;height:40px;width:80%;top:20px;left:10%">
+
+                <input type="text" placeholder="请输入你要找的课程！"  class="layui-input" style="float:left;width:80%">
+                <button class="layui-btn" style="float:left">
+                    <i class="layui-icon">&#xe615;</i>
+                </button>
+            </div>
+        </div>
+        <div class="layui-col-xs3" style="height:100%;">
+            <ul class="login_tab">
+                <li>
+                    <a>
+                        开课
+                    </a>
+                </li>
+                <li>
+                    <a href="regiest.html">登录</a>
+                </li>
+                <li>
+                    <a href="regiest.html">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="layui-row" style="margin:20px 0; height:5px;background:gray;">
+
+
+</div>
+
+<div class="layui-row">
+    <a class="layui-col-xs12 layui-col-md6" style="height:400px;">
+    <h3 style="font-size:25px;text-align:center;">湖畔大学开学，校长马云：做企业要像农民一样</h3>
+    <img src="https://wx1.sinaimg.cn/mw690/70a2f8b2gy1g1hfwmyohhj21900u0wz9.jpg" style="margin:2%;margin-left:10%;margin-right:10%;width:80%;height:200px;border-radius:20%;">
+    <p style="line-height:20px;font-size:15px;height:40px;margin:10%;margin-top:10px;margin-bottom:10px;display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;">
+        3月27日，雨后初晴的杭州迎来了湖畔五期开学典礼，200余位学员与企业家齐聚一堂，共同迎接41位五期新生。
+
+        五期学员涵盖了14个行业，互联网产业与传统产业的比例基本对半。学员平均年龄37.6岁，女生有13位，占比1/3，也是湖畔女性学员比例最高的一个班。
+    </p>
+    <div style="margin:10px 10%;font-size:12px;color:grey;">新华社    704评论</div>
+</a>
+
+
+
+</div>
+
+<div class="dark" style="width:100%;height:400px;position:relative">
+
+    <div style="position:absolute;width:90%;height:3px;background:#0F0F0F;left:5%;top:55%;"></div>
+
+    <div style="position:absolute;top:30px;width:80%;height:40%;left:10%;">
+        <span class="footspan"><a>腾讯大学腾讯精品课</a></span><span  class="footspan"><a>腾讯网教育频道</a></span>
+        <span  class="footspan"><a>腾讯精品课</a></span>
+    </div>
+    <div style="position:absolute;bottom:30px;width:60%;height:30%;left:20%;text-align:center;">
+        <div><img src="img/logo.PNG"></div>
+        <p style="color:#aaaa;">Copyright © 2018 Tencent. All Rights Reserved.</p>
+        <p style="color:#aaaa;">上饶市521教育网，一家致力于IT线上教育的网站</p>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+package com.jiaoyu.service;
+
+import java.util.ArrayList;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
+import com.jiaoyu.pojo.Jyuser;
+import com.jiaoyu.teacher.service.JyuserService;
+
+
+/**
+ * 认证类
+ * @author xuyisheng
+ *
+ */
+public class UserDetailsServiceImpl implements UserDetailsService {
+	
+	private JyuserService jyuserService;	
+
+	public void setJyuserService(JyuserService jyuserService) {
+		this.jyuserService = jyuserService;
+	}
+
+
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws
+	UsernameNotFoundException {
+		 
+		System.out.println("经过了UserDetailsServiceImpl"+username);
+		
+		
+    ArrayList<GrantedAuthority> grantedAuths = new ArrayList<GrantedAuthority>();
+    
+    System.out.println("1");
+  
+    grantedAuths.add(new SimpleGrantedAuthority("ROLE_USER"));
+    System.out.println("2");
+   
+    System.out.println("3");
+   
+   
+    return new User(username,"123456",grantedAuths);
+	}
+
+}

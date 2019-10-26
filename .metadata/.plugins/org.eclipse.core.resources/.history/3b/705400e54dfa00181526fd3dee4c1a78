@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jiaoyu.mapper.KelistMapper" >
+  <resultMap id="BaseResultMap" type="com.jiaoyu.pojo.Kelist" >
+    <id column="list_id" property="listId" jdbcType="INTEGER" />
+    <result column="ke_id" property="keId" jdbcType="INTEGER" />
+    <result column="list_title" property="listTitle" jdbcType="VARCHAR" />
+    <result column="list_url1" property="listUrl1" jdbcType="VARCHAR" />
+    <result column="list_url2" property="listUrl2" jdbcType="VARCHAR" />
+    <result column="list_order" property="listOrder" jdbcType="INTEGER" />
+    <result column="createdate" property="createdate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    list_id, ke_id, list_title, list_url1, list_url2, list_order, createdate
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.jiaoyu.pojo.KelistExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from kelist
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from kelist
+    where list_id = #{listId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from kelist
+    where list_id = #{listId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.jiaoyu.pojo.KelistExample" >
+    delete from kelist
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.jiaoyu.pojo.Kelist" >
+    insert into kelist (list_id, ke_id, list_title, 
+      list_url1, list_url2, list_order, 
+      createdate)
+    values (#{listId,jdbcType=INTEGER}, #{keId,jdbcType=INTEGER}, #{listTitle,jdbcType=VARCHAR}, 
+      #{listUrl1,jdbcType=VARCHAR}, #{listUrl2,jdbcType=VARCHAR}, #{listOrder,jdbcType=INTEGER}, 
+      #{createdate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jiaoyu.pojo.Kelist" >
+    insert into kelist
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="listId != null" >
+        list_id,
+      </if>
+      <if test="keId != null" >
+        ke_id,
+      </if>
+      <if test="listTitle != null" >
+        list_title,
+      </if>
+      <if test="listUrl1 != null" >
+        list_url1,
+      </if>
+      <if test="listUrl2 != null" >
+        list_url2,
+      </if>
+      <if test="listOrder != null" >
+        list_order,
+      </if>
+      <if test="createdate != null" >
+        createdate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="listId != null" >
+        #{listId,jdbcType=INTEGER},
+      </if>
+      <if test="keId != null" >
+        #{keId,jdbcType=INTEGER},
+      </if>
+      <if test="listTitle != null" >
+        #{listTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="listUrl1 != null" >
+        #{listUrl1,jdbcType=VARCHAR},
+      </if>
+      <if test="listUrl2 != null" >
+        #{listUrl2,jdbcType=VARCHAR},
+      </if>
+      <if test="listOrder != null" >
+        #{listOrder,jdbcType=INTEGER},
+      </if>
+      <if test="createdate != null" >
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.jiaoyu.pojo.KelistExample" resultType="java.lang.Integer" >
+    select count(*) from kelist
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update kelist
+    <set >
+      <if test="record.listId != null" >
+        list_id = #{record.listId,jdbcType=INTEGER},
+      </if>
+      <if test="record.keId != null" >
+        ke_id = #{record.keId,jdbcType=INTEGER},
+      </if>
+      <if test="record.listTitle != null" >
+        list_title = #{record.listTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="record.listUrl1 != null" >
+        list_url1 = #{record.listUrl1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.listUrl2 != null" >
+        list_url2 = #{record.listUrl2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.listOrder != null" >
+        list_order = #{record.listOrder,jdbcType=INTEGER},
+      </if>
+      <if test="record.createdate != null" >
+        createdate = #{record.createdate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update kelist
+    set list_id = #{record.listId,jdbcType=INTEGER},
+      ke_id = #{record.keId,jdbcType=INTEGER},
+      list_title = #{record.listTitle,jdbcType=VARCHAR},
+      list_url1 = #{record.listUrl1,jdbcType=VARCHAR},
+      list_url2 = #{record.listUrl2,jdbcType=VARCHAR},
+      list_order = #{record.listOrder,jdbcType=INTEGER},
+      createdate = #{record.createdate,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jiaoyu.pojo.Kelist" >
+    update kelist
+    <set >
+      <if test="keId != null" >
+        ke_id = #{keId,jdbcType=INTEGER},
+      </if>
+      <if test="listTitle != null" >
+        list_title = #{listTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="listUrl1 != null" >
+        list_url1 = #{listUrl1,jdbcType=VARCHAR},
+      </if>
+      <if test="listUrl2 != null" >
+        list_url2 = #{listUrl2,jdbcType=VARCHAR},
+      </if>
+      <if test="listOrder != null" >
+        list_order = #{listOrder,jdbcType=INTEGER},
+      </if>
+      <if test="createdate != null" >
+        createdate = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where list_id = #{listId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jiaoyu.pojo.Kelist" >
+    update kelist
+    set ke_id = #{keId,jdbcType=INTEGER},
+      list_title = #{listTitle,jdbcType=VARCHAR},
+      list_url1 = #{listUrl1,jdbcType=VARCHAR},
+      list_url2 = #{listUrl2,jdbcType=VARCHAR},
+      list_order = #{listOrder,jdbcType=INTEGER},
+      createdate = #{createdate,jdbcType=TIMESTAMP}
+    where list_id = #{listId,jdbcType=INTEGER}
+  </update>
+</mapper>
